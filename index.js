@@ -25,7 +25,7 @@ const connect = async () => {//can only throw error when cannot make first conne
 
 }
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
