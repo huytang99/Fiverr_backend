@@ -9,6 +9,7 @@ import gigRoute from "./routes/gig.route.js";
 import messageRoute from "./routes/message.route.js";
 import orderRoute from "./routes/order.route.js";
 import reviewRoute from "./routes/review.route.js";
+import testRoute from "./routes/test.route.js";
 import userRoute from "./routes/user.route.js";
 
 const app = express();
@@ -29,11 +30,8 @@ app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/api/test', (req, res) => {
-    res.send('The app is working properly')
 
-  })
-
+app.use("/api/test", testRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
