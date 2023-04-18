@@ -29,6 +29,10 @@ app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/test', (req, res) => {
+    res.send('The app is working properly')
+  })
+
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
